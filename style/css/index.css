@@ -65,6 +65,11 @@ a {
 .navbar__link {
   font-family: "Rubik", sans-serif;
   font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.navbar__link:hover {
+  color: #c8693a;
 }
 
 .navbar__item + .navbar__item {
@@ -524,7 +529,7 @@ a {
 }
 
 .join {
-  background: black;
+  background: #1a1512;
   padding-top: 100px;
   position: relative;
   padding-bottom: 100px;
@@ -562,7 +567,7 @@ a {
 }
 
 .contact {
-  background: black;
+  background: #261e1c;
   padding-top: 100px;
 }
 
@@ -598,20 +603,18 @@ a {
 .media__icon {
   color: #c8693a;
   font-size: 0.8rem;
+  padding: 3px 5px;
 }
 
 .media__item {
   border: 1px solid #c8693a;
-  width: 20px;
-  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 100;
 }
 
-.media__link + .media__link {
-  margin-left: 10px;
+.media__item + .media__item {
+  margin-left: 15px;
 }
 
 .instagram-gallery {
