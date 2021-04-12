@@ -26,7 +26,7 @@ a {
 
 .navigation {
   padding: 25px 0;
-  background: rgba(0, 0, 0, 0.411);
+  background: rgba(0, 0, 0, 0.507);
 }
 
 .navigation-content {
@@ -60,12 +60,14 @@ a {
 .navbar {
   display: flex;
   display: none;
+  font-size: "Rubik", sans-serif;
 }
 
 .navbar__link {
   font-family: "Rubik", sans-serif;
   font-size: 0.9rem;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 .navbar__link:hover {
@@ -121,29 +123,13 @@ a {
   line-height: 30px;
   font-size: 1.125rem;
   font-family: "Rubik", sans-serif;
-}
-
-.main-text-block__bttns {
-  flex-direction: column;
-  padding-top: 30px;
-}
-
-.main-text-block__bttn {
-  border-radius: 3px;
-}
-
-.main-text-block__bttn:last-child {
-  margin-top: 20px;
-}
-
-.main-text-block__bttn:hover {
-  background: #c8693a;
-  border-color: #c8693a;
+  padding-bottom: 30px;
 }
 
 .bttns {
   display: flex;
   color: #fff;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -153,17 +139,27 @@ a {
 
 .bttns__bttn {
   color: #fff;
-  max-width: 125px;
-  width: 100%;
   padding: 12px;
   border: 3px solid #fff;
   border-radius: 3px;
   font-weight: 700;
+  transition: 0.3s;
+  display: inline;
 }
 
-.bttns__bttn:hover {
+.bttns__bttn:first-child {
   background: #c8693a;
   border-color: #c8693a;
+}
+
+.bttns__bttn:first-child:hover {
+  background: #a14d23;
+  border-color: #a14d23;
+}
+
+.bttns__bttn:last-child:hover {
+  background: #fff;
+  color: black;
 }
 
 .about {
@@ -213,8 +209,8 @@ a {
   background-image: url(../../img/wines/white-wine.jfif);
 }
 
-.card__content_sm {
-  padding: 100px 35px 100px 35px;
+.card__item_sm {
+  padding: 50% 15% 15% 15%;
 }
 
 .card__bttn {
@@ -280,7 +276,7 @@ a {
   padding: 50px 30px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 100px;
+  grid-gap: 40px;
 }
 
 .discover {
@@ -312,6 +308,7 @@ a {
 .wine-shop {
   background: #261e1c;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .product {
@@ -342,6 +339,11 @@ a {
 .history {
   background: #261e1c;
   padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.history-content {
+  padding-top: 60px;
 }
 
 .history__img {
@@ -349,8 +351,9 @@ a {
 }
 
 .about-us {
-  background: black;
+  background: #221710;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .about-us__img {
@@ -396,8 +399,13 @@ a {
 }
 
 .video {
-  padding-top: 100px;
   background-image: url(../../img/video-img.png);
+  background-position: center;
+}
+
+.video-content {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .video__icon {
@@ -409,9 +417,21 @@ a {
   padding-top: 15px;
 }
 
+.video__item {
+  padding-top: 50px;
+  font-family: "Rubik", sans-serif;
+}
+
 .top-wines {
   padding-top: 100px;
   background: #261e1c;
+}
+
+.top-wines__bttn {
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.6rem;
 }
 
 .discount {
@@ -529,7 +549,7 @@ a {
 }
 
 .join {
-  background: #1a1512;
+  background: #221710;
   padding-top: 100px;
   position: relative;
   padding-bottom: 100px;
@@ -602,8 +622,16 @@ a {
 
 .media__icon {
   color: #c8693a;
-  font-size: 0.8rem;
-  padding: 3px 5px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.media__icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .media__item {
@@ -611,9 +639,20 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 25px;
+  height: 25px;
 }
 
 .media__item + .media__item {
+  margin-left: 15px;
+}
+
+.media__link {
+  width: 100%;
+  height: 100%;
+}
+
+.media__link + .media__link {
   margin-left: 15px;
 }
 
@@ -644,16 +683,22 @@ a {
   .navigation-content .media {
     display: none;
   }
+  .bttns__bttn {
+    max-width: 125px;
+    width: 100%;
+  }
+  .bttns__bttn + .bttns__bttn {
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 375px) {
   .bttns {
     flex-direction: row;
-    justify-content: center;
   }
-  .main-text-block__bttn:last-child {
+  .bttns__bttn + .bttns__bttn {
     margin: 0;
-    margin-left: 20px;
+    margin-left: 10px;
   }
 }
 

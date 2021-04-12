@@ -11,10 +11,11 @@ $white: #fff
 $orange: rgb(200, 105, 58)
 $gray: rgb(137, 128, 130)
 $brown: rgb(38, 30, 28)
-$browner: rgb(26, 21, 18)
+$browner: rgb(34, 23, 16)
 $black: rgb(0, 0, 0)
 $grayish: rgb(52, 46, 46)
-$darken: rgba(0, 0, 0, 0.411)
+$darken: rgba(0, 0, 0, 0.507)
+$orangeHover: rgb(161, 77, 35)
 
     
 *
@@ -67,10 +68,12 @@ a
 .navbar
     display: flex
     display: none
+    font-size: $Rubik
     &__link
         font-family: $Rubik
         font-size: 0.9rem
         transition: 0.3s
+        font-weight: bold
         &:hover
             color: $orange
     &__item
@@ -111,35 +114,34 @@ a
         line-height: 30px
         font-size: 1.125rem
         font-family: $Rubik
-    &__bttns
-        flex-direction: column
-        padding-top: 30px
-    &__bttn
-        border-radius: 3px
-        &:last-child
-            margin-top: 20px
-        &:hover
-            background: $orange
-            border-color: $orange
+        padding-bottom: 30px
 
 
 .bttns
     display: flex
     color: $white
+    flex-direction: column
     text-align: center
     &_center
         align-items: center
     &__bttn
         color: $white
-        max-width: 125px
-        width: 100%
         padding: 12px
         border: 3px solid $white
         border-radius: 3px
         font-weight: 700
-        &:hover
+        transition: 0.3s
+        display: inline
+        &:first-child
             background: $orange
             border-color: $orange
+            &:hover
+                background: $orangeHover
+                border-color: $orangeHover
+        &:last-child
+            &:hover
+                background: $white
+                color: $black
 
 .about
     background: $brown
@@ -160,7 +162,6 @@ a
         background-size: cover
         background-position: center 
         max-width: 337px
-        // width: 100%
         height: 100%
         padding: 80% 15% 15% 15%
         &_events
@@ -173,10 +174,8 @@ a
             background-image: url(../../img/wines/red-wine.jfif)
         &_whiteWines
             background-image: url(../../img/wines/white-wine.jfif)
-    &__content
-        // padding: 80% 15% 15% 15%
         &_sm
-            padding: 100px 35px 100px 35px
+            padding: 50% 15% 15% 15%
     &__bttn
         display: block
         margin-top: 20px
@@ -226,7 +225,7 @@ a
         padding: 50px 30px
         display: grid
         grid-template-columns: 1fr
-        grid-gap: 100px
+        grid-gap: 40px
 
 .discover
     background-image: url(../../img/discover.jfif)
@@ -255,6 +254,7 @@ a
 .wine-shop
     background: $brown
     padding-top: 100px
+    padding-bottom: 100px
 
 
 .product
@@ -277,12 +277,16 @@ a
 .history
     background: $brown
     padding-top: 100px
+    padding-bottom: 100px
+    &-content
+        padding-top: 60px
     &__img
         width: 100%
 
 .about-us
-    background: $black
+    background: $browner
     padding-top: 100px
+    padding-bottom: 100px
     &__img
         width: 100%
         display: none
@@ -311,18 +315,30 @@ a
             &+&
                 margin-top: 5px
 .video
-    padding-top: 100px
     background-image: url(../../img/video-img.png)
+    background-position: center
+    &-content
+        padding-top: 100px
+        padding-bottom: 100px
+
     &__icon
         font-size: 3em
         color: $orange
     &__title
         padding-top: 15px
+    &__item
+        padding-top: 50px
+        font-family: $Rubik
 
 
 .top-wines
     padding-top: 100px
     background: $brown
+    &__bttn
+        display: inline-block
+        text-align: center
+        margin-top: 20px
+        font-size: 0.6rem
 
 
 .discount
@@ -458,16 +474,30 @@ a
     justify-content: space-between
     align-items: center
     &__icon
+        // display: block
         color: $orange
-        font-size: 0.8rem
-        padding: 3px 5px
+        width: 100%
+        height: 100%
+        position: relative
+        &::before
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
         &:hover
-            
     &__item
         border: 1px solid $orange
         display: flex
         justify-content: center
         align-items: center
+        width: 25px
+        height: 25px
+        &+&
+            margin-left: 15px
+    &__link
+        width: 100%
+        height: 100%
+
         &+&
             margin-left: 15px
 
