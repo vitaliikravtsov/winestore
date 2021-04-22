@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Prata&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Prata&family=Rubik:wght@300&display=swap')
 
-
 $Vibes: 'Great Vibes', cursive
 $Prata: 'Prata', serif
 $Rubik: 'Rubik', sans-serif
@@ -17,7 +16,6 @@ $grayish: rgb(52, 46, 46)
 $darken: rgba(0, 0, 0, 0.507)
 $orangeHover: rgb(161, 77, 35)
 
-    
 *
     margin: 0
     padding: 0
@@ -27,10 +25,8 @@ $orangeHover: rgb(161, 77, 35)
     border: none
     outline: none
 
-
 a
     color: inherit
-
 
 .container
     max-width: 980px
@@ -56,7 +52,6 @@ a
     display: flex
     & .media
         padding-left: 20px
-    
 
 #burger-checkbox
     display: none
@@ -76,8 +71,7 @@ a
             color: $orange
     &__item
         &+&
-           margin-left: 10px
-
+            margin-left: 10px
 
 .header
     background-image: url(../img/header.jfif)
@@ -88,8 +82,6 @@ a
     &-content
         padding-top: 115px
         padding-bottom: 180px
-
-
 
 .main-text-block
     text-align: center
@@ -114,7 +106,6 @@ a
         font-family: $Rubik
         padding-bottom: 30px
 
-
 .bttns
     display: flex
     color: $white
@@ -137,7 +128,7 @@ a
         &:hover
             background: $orangeHover
             border-color: $orangeHover
-        &:nth-child(2)
+        &_else
             color: $white
             background: transparent
             border-color: $white
@@ -152,17 +143,19 @@ a
         padding-top: 110px
         padding-bottom: 50px
 
-
 .card
     display: grid
     grid-template-columns: 1fr
     grid-gap: 1em
+    &__content
+        padding-top: 15em
+        padding-bottom: 2em
     &__item
+        justify-items: center
         background-size: cover
-        // background-position: center 
-        max-width: 370px
-        width: 100%
-        padding: 77% 13% 15% 13%
+        // max-width: 370px
+        // width: 100%
+        padding: 0 2em
         &_events
             background-image: url(../img/about/events.jfif)
         &_wines
@@ -173,12 +166,9 @@ a
             background-image: url(../img/wines/red-wine.jfif)
         &_whiteWines
             background-image: url(../img/wines/white-wine.jfif)
-        &_sm
-            padding: 50% 15% 15% 15%
     &__bttn
         display: block
         margin-top: 20px
-
 
 .second-text-block
     &__above
@@ -261,7 +251,6 @@ a
     padding-top: 100px
     padding-bottom: 100px
 
-
 .product
     padding-top: 50px
     display: flex
@@ -269,21 +258,20 @@ a
     align-items: center
     font-family: $Rubik
     &__img
-        max-width: 242px
+        max-width: 360px
+        width: 100%
     &__name
         padding-top: 20px
     &__price
         padding-top: 20px
     &__bttn
-        background: $orange 
+        background: $orange
         border: none
         font-weight: 900
         margin-top: 10px
 
-
 .history
     background: $brown
-    padding-top: 100px
     padding-bottom: 100px
     &-content
         display: grid
@@ -341,7 +329,6 @@ a
         padding-top: 50px
         font-family: $Rubik
 
-
 .top-wines
     padding-top: 100px
     background: $brown
@@ -350,7 +337,6 @@ a
         text-align: center
         margin-top: 20px
         font-size: 0.6rem
-
 
 .discount
     padding-top: 0px
@@ -363,7 +349,6 @@ a
     &__subtitle
         font-family: $Rubik
         padding-top: 20px
-
 
 .awards
     background: $brown
@@ -410,11 +395,13 @@ a
             position: absolute
             font-size: 2rem
             top: 50%
-            right: -50px
+            right: -25%
             transform: translate(-50%, -50%)
-        
+
 .info
     background: $brown
+    &-content
+        padding-bottom: 5em
     &__icon
         margin-bottom: 10px
         color: $orange
@@ -428,8 +415,6 @@ a
         align-items: center
     &__item
         padding-top: 50px
-
-
 
 .join
     background: $browner
@@ -454,15 +439,19 @@ a
             background: $gray
             text-align: center
             border-radius: 5px
+            color: #dddddd
+            background: rgb(59, 59, 59)
+            cursor: text
+            &:focus
+                outline: 1px solid #fff
         &__bttn
-            // max-width: 100% //удалить эту ерунду
+            width: 100% //удалить эту ерунду
             margin-top: 15px
             background: $orange
             border: none
-    
+
 .contact
     background: $brown
-    padding-top: 100px
     &-list
         padding-top: 50px
         display: flex
@@ -475,8 +464,8 @@ a
             text-align: center
         &__item
             &:first-child
-            padding-bottom: 20px
-            color: $white
+                padding-bottom: 20px
+                color: $white
             &+&
                 padding-top: 10px
                 color: $gray
@@ -507,7 +496,7 @@ a
         align-items: center
         width: 25px
         height: 25px
-        
+
         &+&
             margin-left: 15px
     &__link
@@ -516,28 +505,25 @@ a
         &+&
             margin-left: 15px
 
-
-
-
 .instagram
     &-gallery
         display: grid
         grid-template-columns: 1fr 1fr
         grid-gap: 5px
+        padding-top: 1em
+        padding-bottom: 2em
         &__item
             max-width: 100px
             width: 100%
 
-
 .rights
     background: $black
-    padding-top: 50px
+    padding: 1em
     &-content
         text-align: center
-        color: $white 
+        color: $white
         display: flex
         flex-direction: column
-
 
 @media ( min-width: 320px )
     .container
@@ -546,41 +532,51 @@ a
         background: none
     .navigation-content .media
         display: none
-    .bttns
-        &__bttn
-            max-width: 125px
-            width: 100%
-            &+&
-                margin-top: 20px
-    
+    // .bttns
+    //     &__bttn
+    //         max-width: 125px
+    //         width: 100%
+    //         &+&
+    //             margin-top: 20px
 
 @media ( min-width: 375px )
+    .container
+        max-width: 320px
     .bttns
         flex-direction: row
         &__bttn
             &+&
                 margin: 0
                 margin-left: 10px
+    .discover .bttns
+        justify-content: space-around
+
+@media ( min-width: 425px )
+    .container
+        max-width: 380px
 
 @media ( min-width: 768px )
+    .container
+        max-width: 704px
     .header-content
+        padding-top: 15em
+        padding-bottom: 20em
         display: flex
         flex-direction: row-reverse
         & .bttns
             justify-content: start
     .card
         grid-template-columns: 1fr 1fr
-        justify-content: center
-        align-items: center
+
     .pros
         grid-template-columns: 40% 60%
         &__content
-                grid-template-columns: 1fr 1fr
-                padding: 0
-                grid-gap: 45px
+            grid-template-columns: 1fr 1fr
+            padding: 0
+            grid-gap: 45px
         &__img
             max-width: 300px
-    .bttns 
+    .discover .bttns
         justify-content: center
     .history
         &-content
@@ -590,6 +586,8 @@ a
     .about-us
         &__img
             display: block
+            position: relative
+            left: -30%
         &-content
             display: grid
             grid-template-columns: 1fr 1fr
@@ -597,6 +595,7 @@ a
     .products
         display: grid
         grid-template-columns: 1fr 1fr
+        grid-gap: 1em
 
     .video
         &-content
@@ -604,51 +603,52 @@ a
             grid-template-columns: 30% 70%
         & .main-text-block__title
             font-size: 4.4rem
-    .top-wines-content
-        display: grid
-        grid-template-columns: 1fr 1fr
+        &__item
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+//     .top-wines-content
+//         display: grid
+//         grid-template-columns: 1fr 1fr
 
-    .awards-item
-        display: grid
-        grid-template-rows: 1fr
-        grid-template-columns: 15% 15% 15% 55%
+//     .awards-item
+//         display: grid
+//         grid-template-rows: 1fr
+//         grid-template-columns: 15% 15% 15% 55%
 
-    .questions-content
-        display: grid
-        grid-template-columns: 65% 35%
-    .info
-        &-content
-            display: grid
-            grid-template-columns: 1fr 1fr
-        &__icon
-            width: 70px
-            height: 70px
-    .join-content
-        display: grid
-        grid-template-columns: 70% 30%
-    .contact-content 
-        display: grid
-        grid-template-columns: 1fr 1fr 1fr 1fr
-        grid-gap: 20px  
-    .instagram
-        &-gallery
-            grid-gap: 20px  
-    .rights
-        &-content
-            flex-direction: row
-            justify-content: space-between
-        &__text
-            display: inline-block
+//     .questions-content
+//         display: grid
+//         grid-template-columns: 65% 35%
+//     .info
+//         &-content
+//             display: grid
+//             grid-template-columns: 1fr 1fr
+//         &__icon
+//             width: 70px
+//             height: 70px
+//     .join-content
+//         display: grid
+//         grid-template-columns: 70% 30%
+//     .contact-content
+//         display: grid
+//         grid-template-columns: 1fr 1fr 1fr 1fr
+//         grid-gap: 20px
+//     // .instagram
+//     //     &-gallery
+//     //         grid-gap: 20px
+//     //         padding-top: 20em
+//     .rights
+//         &-content
+//             flex-direction: row
+//             justify-content: space-between
+//         &__text
+//             display: inline-block
 
-
-
-
-
-@media ( min-width: 980px )
-    .card
-        grid-template-columns: 1fr 1fr 1fr
-    .burger-icon
-        display: none
-    .navbar, .navigation-content .media
-        display: flex
-
+// @media ( min-width: 980px )
+//     .card
+//         grid-template-columns: 1fr 1fr 1fr
+//     .burger-icon
+//         display: none
+//     .navbar, .navigation-content .media
+//         display: flex
