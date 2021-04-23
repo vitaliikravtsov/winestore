@@ -15,6 +15,40 @@ a {
   color: inherit;
 }
 
+.confirmAge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #000000d5;
+  color: #fff;
+  z-index: 5;
+}
+
+.confirmAge-content {
+  padding: 2em;
+  max-width: 770px;
+  width: 100%;
+  background: #261e1c;
+}
+
+.notAllowedPage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #261e1c;
+}
+
 .container {
   max-width: 980px;
   width: 100%;
@@ -28,8 +62,8 @@ a {
 }
 
 .navigation-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 4fr 5fr;
   align-items: center;
 }
 
@@ -40,11 +74,12 @@ a {
 }
 
 .menu {
-  display: flex;
+  display: grid;
 }
 
-.menu .media {
-  padding-left: 20px;
+.menu-content {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 #burger-checkbox {
@@ -61,9 +96,28 @@ a {
 }
 
 .navbar {
-  display: flex;
   display: none;
   font-family: "Rubik", sans-serif;
+  text-align: center;
+}
+
+.navbar_active {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #000000de;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+}
+
+.navbar_active .navbar__item {
+  margin: 0;
+  margin-top: 2em;
+  text-align: center;
 }
 
 .navbar__link {
@@ -75,10 +129,6 @@ a {
 
 .navbar__link:hover {
   color: #c8693a;
-}
-
-.navbar__item + .navbar__item {
-  margin-left: 10px;
 }
 
 .header {
@@ -157,6 +207,7 @@ a {
 .bttns__bttn:hover {
   background: #a14d23;
   border-color: #a14d23;
+  cursor: pointer;
 }
 
 .bttns__bttn_else {
@@ -210,11 +261,11 @@ a {
 }
 
 .card__item_redWines {
-  background-image: url(../img/wines/red-wine.jfif);
+  background-image: url(../img/red-wine.jfif);
 }
 
 .card__item_whiteWines {
-  background-image: url(../img/wines/white-wine.jfif);
+  background-image: url(../img/white-wine.jfif);
 }
 
 .card__bttn {
@@ -321,12 +372,23 @@ a {
   padding-bottom: 100px;
 }
 
+.wine-shop__bttns {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
 .product {
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Rubik", sans-serif;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
 }
 
 .product__img {
@@ -640,6 +702,10 @@ a {
   font-size: 0.9rem;
 }
 
+.contact-list__item:hover {
+  color: #c8693a;
+}
+
 .media {
   display: flex;
   justify-content: space-between;
@@ -720,9 +786,6 @@ a {
   .navigation {
     background: none;
   }
-  .navigation-content .media {
-    display: none;
-  }
 }
 
 @media (min-width: 375px) {
@@ -736,8 +799,8 @@ a {
     margin: 0;
     margin-left: 10px;
   }
-  .discover .bttns {
-    justify-content: space-around;
+  .bttns_center {
+    justify-content: center;
   }
 }
 
@@ -846,7 +909,8 @@ a {
     display: none;
   }
   .navbar, .navigation-content .media {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 /*# sourceMappingURL=index.css.map */

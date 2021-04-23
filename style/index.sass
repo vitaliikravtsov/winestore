@@ -28,6 +28,36 @@ $orangeHover: rgb(161, 77, 35)
 a
     color: inherit
 
+.confirmAge
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background: #000000d5
+    color: $white
+    z-index: 5
+    &-content
+        padding: 2em
+        max-width: 770px
+        width: 100%
+        background: rgb(38,30,28)
+
+.notAllowedPage
+    display: none
+    justify-content: center
+    align-items: center
+    position: absolute
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background: rgb(38,30,28)
+
 .container
     max-width: 980px
     width: 100%
@@ -38,8 +68,9 @@ a
     padding: 25px 0
     background: $darken
     &-content
-        display: flex
-        justify-content: space-between
+        display: grid
+        // justify-self: stretch
+        grid-template-columns: 4fr 5fr
         align-items: center
 
 .logo
@@ -49,9 +80,10 @@ a
         width: 100%
 
 .menu
-    display: flex
-    & .media
-        padding-left: 20px
+    display: grid
+    &-content
+        display: flex
+        flex-direction: row-reverse
 
 #burger-checkbox
     display: none
@@ -62,9 +94,25 @@ a
         color: $orange
 
 .navbar
-    display: flex
     display: none
     font-family: $Rubik
+    text-align: center
+    &_active
+        display: flex
+        width: 100vw
+        height: 100vh
+        background: #000000de
+        position: fixed
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        left: 0
+        top: 0
+        & .navbar__item
+            margin: 0
+            margin-top: 2em
+            text-align: center
+            &::nth-child(n-1)
     &__link
         font-family: $Rubik
         font-size: 0.9rem
@@ -73,8 +121,6 @@ a
         &:hover
             color: $orange
     &__item
-        &+&
-            margin-left: 10px
 
 .header
     background-image: url(../img/header.jfif)
@@ -131,6 +177,7 @@ a
         &:hover
             background: $orangeHover
             border-color: $orangeHover
+            cursor: pointer
         &_else
             color: $white
             background: transparent
@@ -166,9 +213,9 @@ a
         &_varieties
             background-image: url(../img/about/variates.jfif)
         &_redWines
-            background-image: url(../img/wines/red-wine.jfif)
+            background-image: url(../img/red-wine.jfif)
         &_whiteWines
-            background-image: url(../img/wines/white-wine.jfif)
+            background-image: url(../img/white-wine.jfif)
     &__bttn
         display: block
         margin-top: 20px
@@ -253,13 +300,19 @@ a
     background: $brown
     padding-top: 100px
     padding-bottom: 100px
-
+    &__bttns
+        display: flex
+        justify-content: space-around
+        margin-bottom: 2em
 .product
-    padding-top: 50px
     display: flex
     flex-direction: column
     align-items: center
     font-family: $Rubik
+    &-list
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-gap: 2em
     &__img
         max-width: 360px
         width: 100%
@@ -478,6 +531,8 @@ a
                 padding-top: 10px
                 color: $gray
                 font-size: 0.9rem
+            &:hover
+                color: $orange
 
 .media
     display: flex
@@ -538,8 +593,8 @@ a
         max-width: 272px
     .navigation
         background: none
-    .navigation-content .media
-        display: none
+    // .navigation-content .media
+    //     display: none
     // .bttns
     //     &__bttn
     //         max-width: 125px
@@ -556,8 +611,8 @@ a
             &+&
                 margin: 0
                 margin-left: 10px
-    .discover .bttns
-        justify-content: space-around
+    .bttns_center
+        justify-content: center
 
 @media ( min-width: 425px )
     .container
@@ -652,4 +707,5 @@ a
     .burger-icon
         display: none
     .navbar, .navigation-content .media
-        display: flex
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
