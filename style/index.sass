@@ -57,6 +57,9 @@ a
     display: none
 .burger-icon
     font-size: 2em
+    cursor: pointer
+    &:hover
+        color: $orange
 
 .navbar
     display: flex
@@ -355,16 +358,21 @@ a
     padding-top: 100px
     &-content
         display: grid
+        grid-gap: 2em
     &-item
         padding-top: 50px
+        display: grid
+        grid-gap: 2em
+        align-items: center
+        justify-items: center
         &__img
             width: 100%
         &__title
-            padding-top: 30px
+
         &__year
-            padding-top: 30px
+
         &__text
-            padding-top: 30px
+
             color: $gray
 
 .testimonials
@@ -608,47 +616,40 @@ a
             flex-direction: column
             justify-content: center
             align-items: center
-//     .top-wines-content
-//         display: grid
-//         grid-template-columns: 1fr 1fr
 
-//     .awards-item
-//         display: grid
-//         grid-template-rows: 1fr
-//         grid-template-columns: 15% 15% 15% 55%
+    .awards-item
+        display: grid
+        grid-template-rows: 1fr
+        grid-template-columns: 1fr 1fr 0.5fr 3fr
+        align-self: center
 
-//     .questions-content
-//         display: grid
-//         grid-template-columns: 65% 35%
-//     .info
-//         &-content
-//             display: grid
-//             grid-template-columns: 1fr 1fr
-//         &__icon
-//             width: 70px
-//             height: 70px
-//     .join-content
-//         display: grid
-//         grid-template-columns: 70% 30%
-//     .contact-content
-//         display: grid
-//         grid-template-columns: 1fr 1fr 1fr 1fr
-//         grid-gap: 20px
-//     // .instagram
-//     //     &-gallery
-//     //         grid-gap: 20px
-//     //         padding-top: 20em
-//     .rights
-//         &-content
-//             flex-direction: row
-//             justify-content: space-between
-//         &__text
-//             display: inline-block
+    .questions-content
+        display: grid
+        grid-template-columns: 65% 35%
+    .info
+        &-content
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-gap: 3em
 
-// @media ( min-width: 980px )
-//     .card
-//         grid-template-columns: 1fr 1fr 1fr
-//     .burger-icon
-//         display: none
-//     .navbar, .navigation-content .media
-//         display: flex
+    .join-content
+        display: grid
+        grid-template-columns: 70% 30%
+    .contact-content
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-gap: 20px
+
+    .rights
+        &-content
+            flex-direction: row
+            justify-content: space-between
+
+@media ( min-width: 980px )
+    .container
+        max-width: 900px
+
+    .burger-icon
+        display: none
+    .navbar, .navigation-content .media
+        display: flex
