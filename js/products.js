@@ -1,55 +1,55 @@
 const productsJson = `[
     {
-        "image":  "../img/wines/Cabernet.jpeg",
+        "image":  "img/wines/Cabernet.jpeg",
         "name": "Cabernet",
         "price": "$17,000USD",
         "type": "red"
 
     },
     {
-        "image":  "../img/wines/SauvignonBlanc.jpeg",
+        "image":  "img/wines/SauvignonBlanc.jpeg",
         "name": "Sauvignon Blanc",
         "price": "$12,000USD",
         "type": "white"
 
     },
     {
-        "image":  "../img/wines/Syrah.jpeg",
+        "image":  "img/wines/Syrah.jpeg",
         "name": "Syrah",
         "price": "$13,000USD",
         "type": "red"
 
     },
     {
-        "image":  "../img/wines/PinotGrigio.jpeg",
+        "image":  "img/wines/PinotGrigio.jpeg",
         "name": "Pinot Grigio",
         "price": "$10,000USD",
         "type": "white"
 
     },
     {
-        "image":  "../img/wines/PinotNoir.jpeg",
+        "image":  "img/wines/PinotNoir.jpeg",
         "name": "Pinot Noir",
         "price": "$12,000USD",
         "type": "red"
 
     },
     {
-        "image":  "../img/wines/Riesling.jpeg",
+        "image":  "img/wines/Riesling.jpeg",
         "name": "Riesling",
         "price": "$16,000USD",
         "type": "white"
 
     },
     {
-        "image":  "../img/wines/Zifandel.jpeg",
+        "image":  "img/wines/Zifandel.jpeg",
         "name": "Zifandel",
         "price": "$14,000USD",
         "type": "red"
 
     },
     {
-        "image": "../img/wines/Soave.jpeg",
+        "image": "img/wines/Soave.jpeg",
         "name": "Soave",
         "price": "$12,000USD",
         "type": "white"
