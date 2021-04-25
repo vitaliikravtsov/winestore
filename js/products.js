@@ -77,3 +77,22 @@ function renderProducts(products) {
 }
 
 renderProducts(JSON.parse(productsJson));
+const products = JSON.parse(productsJson);
+
+const redWinesBttn = document.querySelector(".redWinesBttn");
+
+// redWinesBttn.addEventListener("click", () => {
+//   for (const product of products) {
+//     html += `
+//           <div class="product">
+//             <img class="product__img" src="${product.image}" alt="" />
+//             <p class="product__name">${product.name}</p>
+//             <span class="product__price">${product.price}</span>
+//             <button class="product__bttn bttns__bttn">Add to cart</button>
+//           </div>
+//           `;
+//   }
+//   productsContainer.forEach((element) => {
+//     element.innerHTML = html;
+//   });
+// });
