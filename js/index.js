@@ -32,38 +32,36 @@ navbar.addEventListener("click", function () {
 // Slider
 const slides = document.querySelectorAll(".product-list");
 const productsAll = slides[0].children; // first section shop
-// const productsAllArray = Array.prototype.slice.call(slides[0].children); // first section shop
 const productsSorting = slides[1].children; // second section shop
-// const productsSorting = Array.prototype.slice.call(slides[1].children); // second section shop
 const sliderBttnNext = document.querySelector(".sliderBttn-next");
 const sliderBttnPrev = document.querySelector(".sliderBttn-prev");
+const sliders = document.querySelectorAll(".slider");
+const firstSlider = sliders[0];
+const secondSlider = sliders[1];
+const sliderScrollbar = document.querySelector(".slider-scrollbar");
 
-for (let i = 0; i < productsAll.length; i++) {
-  function nextSlide() {
-    productsAll;
-  }
-}
-// console.log(slides[0]);
-
-let step = 0;
+let position = 0;
+const step = 270;
 sliderBttnNext.addEventListener("click", moveSlideNext);
 sliderBttnPrev.addEventListener("click", moveSlideBack);
 
 function moveSlideNext() {
-  step -= 270;
-  slides[0].style.left = `${step}px`;
+  position += step;
+  firstSlider.scrollLeft += step;
+  sliderScrollbar.value = firstSlider.scrollLeft;
 }
 function moveSlideBack() {
-  step += 270;
-  slides[0].style.left = `${step}px`;
+  position -= step;
+  firstSlider.scrollLeft -= step;
+  sliderScrollbar.value = firstSlider.scrollLeft;
 }
 
-// const products = document.querySelectorAll(".product");
-// for (let i = 0; i < products.length; i++) {
-//   products[i].setAttribute("id", i);
-// }
+//scroll
+const sliderWidth = firstSlider.offsetWidth;
+sliderScrollbar.setAttribute("min", "0");
+sliderScrollbar.setAttribute("max", sliderWidth);
 
-// let href = 0;
-// sliderBttnNext.addEventListener("click", () => {
-//   sliderBttnNext.setAttribute("href", ` #${href++}`);
-// });
+sliderScrollbar.addEventListener("input", () => {
+  firstSlider.scrollLeft = sliderScrollbar.value;
+  console.log(firstSlider.scrollWidth);
+});

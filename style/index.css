@@ -378,6 +378,11 @@ a {
   margin-bottom: 2em;
 }
 
+.slider-scrollbar {
+  width: 100%;
+  color: #000;
+}
+
 .slider {
   overflow-x: scroll;
   position: relative;
