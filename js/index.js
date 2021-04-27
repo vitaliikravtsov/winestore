@@ -45,23 +45,30 @@ const step = 270;
 sliderBttnNext.addEventListener("click", moveSlideNext);
 sliderBttnPrev.addEventListener("click", moveSlideBack);
 
+
+
 function moveSlideNext() {
   position += step;
   firstSlider.scrollLeft += step;
-  sliderScrollbar.value = firstSlider.scrollLeft;
+  sliderScrollbar.value = firstSlider.scrollLeft + sliderScreenWidth;
 }
 function moveSlideBack() {
   position -= step;
   firstSlider.scrollLeft -= step;
-  sliderScrollbar.value = firstSlider.scrollLeft;
+  sliderScrollbar.value = firstSlider.scrollLeft + sliderScreenWidth;
 }
 
 //scroll
-const sliderWidth = firstSlider.offsetWidth;
-sliderScrollbar.setAttribute("min", "0");
+const sliderWidth = firstSlider.scrollWidth;
+const sliderScreenWidth = sliderScrollbar.offsetWidth
+sliderScrollbar.setAttribute("min", sliderScreenWidth);
 sliderScrollbar.setAttribute("max", sliderWidth);
 
+
+
 sliderScrollbar.addEventListener("input", () => {
-  firstSlider.scrollLeft = sliderScrollbar.value;
-  console.log(firstSlider.scrollWidth);
+  firstSlider.scrollLeft = sliderScrollbar.value - sliderScreenWidth;
+
 });
+sliderScrollbar.value = firstSlider.scrollLeft
+
