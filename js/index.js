@@ -1,3 +1,6 @@
+new ProductList(new Cart());
+
+
 // Check age
 const body = document.querySelector("body");
 const confirmAge = document.querySelector(".confirmAge");
@@ -64,11 +67,9 @@ const sliderScreenWidth = sliderScrollbar.offsetWidth
 sliderScrollbar.setAttribute("min", sliderScreenWidth);
 sliderScrollbar.setAttribute("max", sliderWidth);
 
-
-
 sliderScrollbar.addEventListener("input", () => {
   firstSlider.scrollLeft = sliderScrollbar.value - sliderScreenWidth;
 
 });
 sliderScrollbar.value = firstSlider.scrollLeft
-
+//
