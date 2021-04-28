@@ -1,83 +1,92 @@
 class ProductList {
   constructor(cart) {
     this.cart = cart;
-    this.container = document.querySelector('.products-contsiner');
+    this.container = document.querySelector(".product-list");
     this.productService = new ProductsService();
-    this.sortDirection = 'ascending';
+    // this.sortDirection = "ascending";
+    this.productType = "all";
     this.productService
       .getProducts()
       .then(() => this.renderProducts())
-      .then(() => this.addEventListeners());    
+      .then(() => this.addEventListeners());
   }
   async renderProducts() {
-    let productListDomString = '';
+    let productListDomString = "";
     const products = await this.productService.getProducts();
     [...products]
-      .sort( (a, b) => this.sortDirection === 'ascending' 
-                         ? a.price - b.price
-                         : b.price - a.price)
-      .forEach(product => {
-      productListDomString += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-      <div class="card product">
-        <img class="card-img-top" src="img/products/${product.image}" 
-            alt="${product.title}">
-        <div class="card-body d-flex flex-column">
-          <h4 class="card-title">${product.title}</h4>
-          <p class="card-text flex-fill">${product.description}</p>
-          <div class="d-flex justify-content-around">
-            <button class="btn btn-info" data-bs-toggle="modal"
-              data-bs-target="#productInfoModal" data-id="${product.id}">Info
-            </button>
-            <button class="btn btn-primary buy" data-id="${product.id}">
-              $${product.price} - Buy
-            </button>
-          </div>
-        </div>
+      .filter((product) =>
+        this.productType === "all" ? true : product.type === this.productType
+      )
+      // .sort((a, b) =>
+      //   this.sortDirection === "ascending"
+      //     ? a.price - b.price
+      //     : b.price - a.price
+      // )
+      .forEach((product) => {
+        productListDomString += `
+      <div class="product card">
+        <img class="product__img" src="img/wines/${product.image}" alt="" />
+        <p class="product__name">${product.name}</p>
+        <span class="product__price">${product.price}</span>
+        <button class="product__bttn bttns__bttn btn btn-info" data-bs-toggle="modal"
+        data-bs-target="#productInfoModal" data-id="${product.id}">Info</button>
+        <button class="product__bttn bttns__bttn btn btn-primary buy" data-id="${product.id}">Add to cart</button>
       </div>
-    </div>`;
-    });
+       `;
+      });
     this.container.innerHTML = productListDomString;
   }
   async addEventListeners() {
     document
-      .querySelectorAll('.product .btn-info')
-      .forEach(button =>
-        button.addEventListener('click', event =>
+      .querySelectorAll(".product .btn-info")
+      .forEach((button) =>
+        button.addEventListener("click", (event) =>
           this.handleProductInfoClick(event)
         )
       );
     document
-      .querySelectorAll(
-        '.card.product button.buy, #productInfoModal button.buy'
-      )
-      .forEach(button =>
-        button.addEventListener('click', event =>
+      .querySelectorAll("button.buy")
+      .forEach((button) =>
+        button.addEventListener("click", (event) =>
           this.handleProductBuyClick(event)
         )
       );
-    document.querySelector('.sort-asc').addEventListener('click', async () => {
-        this.sortDirection = 'ascending';
+    // document.querySelector(".ascending").addEventListener("click", async () => {
+    //   this.sortDirection = "ascending";
+    //   await this.renderProducts();
+    //   this.addEventListeners();
+    // });
+    document.querySelector(".allWines").addEventListener("click", async () => {
+      this.productType = "all";
+      await this.renderProducts();
+      this.addEventListeners();
+    });
+    document.querySelector(".redWines").addEventListener("click", async () => {
+      this.productType = "red";
+      await this.renderProducts();
+      this.addEventListeners();
+    });
+    document
+      .querySelector(".whiteWines")
+      .addEventListener("click", async () => {
+        this.productType = "white";
         await this.renderProducts();
         this.addEventListeners();
-    });
-    document.querySelector('.sort-desc').addEventListener('click', async () => {
-        this.sortDirection = 'descending';
-        await this.renderProducts();
-        this.addEventListeners();
-    });
+      });
   }
   async handleProductInfoClick(event) {
     const button = event.target; // Button that triggered the modal
     const id = button.dataset.id; // Extract info from data-* attributes
     const product = await this.productService.getProductById(id);
-    const modal = document.querySelector('#productInfoModal');
-    const productImg = modal.querySelector('.modal-body .card-img-top');
-    productImg.setAttribute('src', 'img/products/' + product.image);
-    productImg.setAttribute('alt', product.title);
-    modal.querySelector('.modal-body .card-title').innerText = product.title;
-    modal.querySelector('.modal-body .card-text').innerText =
+    console.log(product);
+    const modal = document.querySelector("#productInfoModal");
+    const productImg = modal.querySelector(".modal-body .product__img");
+    productImg.setAttribute("src", "img/wines/" + product.image);
+    productImg.setAttribute("alt", product.name);
+    modal.querySelector(".modal-body .card-title").innerText = product.name;
+    modal.querySelector(".modal-body .card-text").innerText =
       product.description;
-    const btnBuy = modal.querySelector('button.buy');
+    const btnBuy = modal.querySelector("button.buy");
     btnBuy.innerText = `${product.price} - Buy`;
     btnBuy.dataset.id = id;
   }
@@ -85,8 +94,6 @@ class ProductList {
     const button = event.target;
     const id = button.dataset.id;
     this.cart.addProduct(id);
-    window.showAlert('Product added to cart');
+    window.showAlert("Product added to cart");
   }
 }
-
-

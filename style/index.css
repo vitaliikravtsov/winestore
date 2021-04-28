@@ -13,6 +13,12 @@
 
 a {
   color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 .confirmAge {
@@ -378,6 +384,11 @@ a {
   margin-bottom: 2em;
 }
 
+.modal-content {
+  background: #261e1c;
+  color: #fff;
+}
+
 .slider-scrollbar {
   width: 100%;
   color: #000;
@@ -396,23 +407,28 @@ a {
   position: relative;
 }
 
+.sliderBttns {
+  display: flex;
+  justify-content: center;
+}
+
 .sliderBttn {
   position: absolute;
-  top: 0;
-  height: 100%;
-  width: 2em;
-  background: #fff;
-  opacity: 0.09;
-  border-radius: 0.5em;
+  top: 50%;
+  transform: translate(0, -50%);
+  height: 4em;
+  width: 4em;
+  background: #ffffff2a;
+  border-radius: 50%;
   cursor: pointer;
 }
 
 .sliderBttn-next {
-  right: -2em;
+  right: -4em;
 }
 
 .sliderBttn-prev {
-  left: -2em;
+  left: -4em;
 }
 
 .product {
