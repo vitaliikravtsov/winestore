@@ -160,6 +160,27 @@ ul
         font-family: $Rubik
         padding-bottom: 30px
 
+.openCartLink
+    display: inline-block
+    color: $black
+
+.nav-link
+    padding: 0
+    font-size: 1.5em
+
+.cart-box
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    background: $white
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    right: 5em
+    top: 5em
+    z-index: 5
+
 .bttns
     display: flex
     color: $white
@@ -201,7 +222,8 @@ ul
 .card
     display: grid
     grid-template-columns: 1fr
-    grid-gap: 1em
+    // grid-gap: 1em
+    background-color: inherit
     &__content
         padding-top: 15em
         padding-bottom: 2em
