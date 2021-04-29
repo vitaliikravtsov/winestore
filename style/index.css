@@ -225,6 +225,10 @@ ul {
   background: #c8693a;
 }
 
+.cart-box a:hover {
+  color: #c8693a;
+}
+
 .bttns {
   display: flex;
   color: #fff;
