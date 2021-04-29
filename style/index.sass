@@ -26,8 +26,11 @@ $orangeHover: rgb(161, 77, 35)
     outline: none
 
 a
-    color: inherit
     text-decoration: none
+    color: inherit
+    &:hover
+        color: inherit
+p
 
 ul
     margin: 0
@@ -62,6 +65,9 @@ ul
     right: 0
     left: 0
     background: rgb(38,30,28)
+
+.modal-body .container
+    color: black
 
 .container
     max-width: 980px
@@ -126,6 +132,8 @@ ul
         &:hover
             color: $orange
     &__item
+        &:last-child
+            margin-left: 1em
 
 .header
     background-image: url(../img/header.jfif)
@@ -161,25 +169,43 @@ ul
         padding-bottom: 30px
 
 .openCartLink
-    display: inline-block
-    color: $black
-
-.nav-link
     padding: 0
-    font-size: 1.5em
-
-.cart-box
-    width: 60px
-    height: 60px
-    border-radius: 50%
-    background: $white
     display: flex
     justify-content: center
     align-items: center
+    // font-size: 2em
+    color: $black
+    width: 60px
+    height: 60px
+    background: #fff
+    border-radius: 50%
     position: fixed
+    top: 10em
     right: 5em
-    top: 5em
     z-index: 5
+
+.cart-icon
+    font-size: 1.5em
+
+.badge
+    position: absolute
+    border-radius: 50%
+    right: 0
+    top: 0
+    background: $orange
+
+// .cart-box
+//     width: 60px
+//     height: 60px
+//     border-radius: 50%
+//     background: $white
+//     display: flex
+//     justify-content: center
+//     align-items: center
+//     position: fixed
+//     right: 5em
+//     top: 5em
+//     z-index: 5
 
 .bttns
     display: flex
@@ -220,19 +246,25 @@ ul
         padding-bottom: 50px
 
 .card
-    display: grid
-    grid-template-columns: 1fr
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+    // grid-template-columns: 1fr
     // grid-gap: 1em
     background-color: inherit
+    border: none
     &__content
         padding-top: 15em
         padding-bottom: 2em
     &__item
         justify-items: center
         background-size: cover
-        // max-width: 370px
-        // width: 100%
+        max-width: 270px
+        width: 100%
         padding: 0 2em
+        &+&
+            margin-top: 1em
         &_events
             background-image: url(../img/about/events.jfif)
         &_wines
@@ -333,8 +365,7 @@ ul
         margin-bottom: 2em
 
 .modal-content
-    background: $brown
-    color: $white
+    color: #000
 
 .slider-scrollbar
     width: 100%
@@ -349,8 +380,12 @@ ul
 .slider-container
     position: relative
 .sliderBttns
-    display: flex
+    display: grid
+    // flex-direction: column
     justify-content: center
+    grid-gap: 1em
+    & .bttns__bttn
+        margin: 0
 
 .sliderBttn
     position: absolute
@@ -361,10 +396,13 @@ ul
     background: #ffffff2a
     border-radius: 50%
     cursor: pointer
+    &:focus
+        outline: none
+
     &-next
-        right: -4em
+        right: 0em
     &-prev
-        left: -4em
+        left: 0em
 .product
     display: flex
     flex-direction: column
@@ -377,6 +415,8 @@ ul
         display: flex
         position: relative
         left: 0
+        padding-top: 3em
+        padding-bottom: 3em
 
     &__img
         max-width: 360px
@@ -390,6 +430,8 @@ ul
         border: none
         font-weight: 900
         margin-top: 10px
+    &__name
+        cursor: pointer
 
 .history
     background: $brown
@@ -457,8 +499,12 @@ ul
         display: inline-block
         text-align: center
         margin-top: 20px
-        font-size: 0.6rem
-
+    & .card
+        display: flex
+        grid-template-columns: 1fr 1fr
+        grid-gap: 1em
+    & .card__item
+        max-width: 100%
 .discount
     padding-top: 0px
     background: $brown
@@ -470,6 +516,16 @@ ul
     &__subtitle
         font-family: $Rubik
         padding-top: 20px
+    &__bttn
+        cursor: pointer
+        padding: 0.5em 2em
+        border: 2px solid #fff
+        transition: 0.3s
+        font-weight: bold
+        &:hover
+            background: #fff
+            color: $orange
+            // border-color: $orange
 
 .awards
     background: $brown
@@ -493,12 +549,19 @@ ul
 
             color: $gray
 
-.testimonials
-    background: $brown
-    padding-top: 100px
-    &-slider
-        padding-top: 50px
-        text-align: center
+// .testimonials
+//     background: $brown
+//     padding-top: 100px
+//     &-slider
+//         padding-top: 50px
+//         text-align: center
+//         display: flex
+//         &__item
+//             margin-bottom: 0
+//             display: none
+//             &_active
+//                 display: block
+
 .questions
     background: $brown
     padding-top: 100px
@@ -513,6 +576,14 @@ ul
         padding: 30px 0
         font-size: 1.375rem
         border-bottom: 1px solid $gray
+        cursor: pointer
+        &_active
+            transition: 0.3s
+        &_active .accordeon__content
+            display: block
+        &_active .accordeon__title
+            &::before
+                content: "-"
     &__title
         width: 80%
         position: relative
@@ -523,6 +594,13 @@ ul
             top: 50%
             right: -25%
             transform: translate(-50%, -50%)
+    &__content
+        color: $gray
+        font-size: 0.7em
+        display: none
+        padding-top: 2em
+    & p
+        margin-bottom: 0
 
 .info
     background: $brown
@@ -615,7 +693,6 @@ ul
             left: 50%
             transform: translate(-50%, -50%)
         &:hover
-            background: $orange
             color: #000
     &__item
         border: 1px solid $orange
@@ -624,14 +701,22 @@ ul
         align-items: center
         width: 25px
         height: 25px
-
+        &:hover
+            background: $orange
+            color: #000
         &+&
             margin-left: 15px
+
     &__link
         width: 100%
         height: 100%
+        display: flex
+        justify-content: center
         &+&
             margin-left: 15px
+    & a
+        &:hover
+            color: #000
 
 .instagram
     &-gallery
@@ -678,6 +763,9 @@ ul
                 margin-left: 10px
     .bttns_center
         justify-content: center
+    .sliderBttns
+        & .bttns__bttn
+            margin: 0
 
 @media ( min-width: 425px )
     .container
@@ -694,7 +782,11 @@ ul
         & .bttns
             justify-content: start
     .card
-        grid-template-columns: 1fr 1fr
+        justify-content: space-between
+        &__item
+            // max-width: 300px
+            &+&
+                margin: 0
 
     .pros
         grid-template-columns: 40% 60%
@@ -765,6 +857,17 @@ ul
             flex-direction: row
             justify-content: space-between
 
+    .sliderBttns
+        grid-template-columns: repeat(3, 1fr)
+
+    .about .card
+        justify-content: space-around
+
+    .top-wines
+        & .card
+            display: grid
+            grid-template-columns: 1fr 1fr
+
 @media ( min-width: 980px )
     .container
         max-width: 900px
@@ -772,5 +875,8 @@ ul
     .burger-icon
         display: none
     .navbar, .navigation-content .media
-        display: grid
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+        display: flex
+
+    .navbar__item
+        &+&
+            margin-left: 1em

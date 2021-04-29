@@ -63,7 +63,7 @@
                 <input type="checkbox" id="burger-checkbox" />
                 <ul class="navbar">
                   <li class="navbar__item">
-                    <a class="navbar__link" href="#best-deals">Best Deals</a>
+                    <a class="navbar__link" href="#best-deals">Shop</a>
                   </li>
                   <li class="navbar__item">
                     <a class="navbar__link" href="#history">History</a>
@@ -71,9 +71,9 @@
                   <li class="navbar__item">
                     <a class="navbar__link" href="#about-us">About Us</a>
                   </li>
-                  <li class="navbar__item">
+                  <!-- <li class="navbar__item">
                     <a class="navbar__link" href="#shop">Shop</a>
-                  </li>
+                  </li> -->
                   <li class="navbar__item">
                     <a class="navbar__link" href="#contact">Contact Us</a>
                   </li>
@@ -116,8 +116,8 @@
               Grown with love and respect for the California lands.
             </p>
             <div class="bttns">
-              <a class="bttns__bttn" href="#">Shop now</a>
-              <a class="bttns__bttn bttns__bttn_else" href="#">Learn more</a>
+              <a class="bttns__bttn" href="#best-deals">Shop now</a>
+              <a class="bttns__bttn bttns__bttn_else" href="#about">Learn more</a>
             </div>
           </section>
         </div>
@@ -137,7 +137,7 @@
               <p class="second-text-block__subtitle">
                 We have a great collection of exclusive reserve wines.
               </p>
-              <a class="second-text-block__link" href="#">Learn more</a>
+              <a class="second-text-block__link" href="#about">Learn more</a>
             </div>
           </div>
           <div class="card__item card__item_wines">
@@ -146,7 +146,7 @@
               <p class="second-text-block__subtitle">
                 Only natural wine without all kinds of additives or flavors.
               </p>
-              <a class="second-text-block__link" href="#">Learn more</a>
+              <a class="second-text-block__link" href="#about">Learn more</a>
             </div>
           </div>
           <div class="card__item card__item_varieties">
@@ -158,12 +158,12 @@
                 We produce and sell the finest wines made of the best grape
                 varieties.
               </p>
-              <a class="second-text-block__link" href="#">Learn more</a>
+              <a class="second-text-block__link" href="#about">Learn more</a>
             </div>
           </div>
         </div>
 
-        <div class="about-content">
+        <div class="about-content" id="about">
           <section class="main-text-block">
             <p class="main-text-block__above">100% natural</p>
             <h2 class="main-text-block__title">
@@ -235,8 +235,8 @@
               Find your ideal taste and flavor for any occasion.
             </p>
             <div class="bttns bttns_center">
-              <a class="bttns__bttn" href="#">Buy wines</a>
-              <a class="bttns__bttn bttns__bttn_else" href="#">Learn more</a>
+              <a class="bttns__bttn" href="#best-deals">Buy wines</a>
+              <a class="bttns__bttn bttns__bttn_else" href="#questions">Learn more</a>
             </div>
           </section>
         </div>
@@ -267,14 +267,14 @@
               <!--Products are dynamically generated here-->
             </div>
           </div>
-          <button class="sliderBttn sliderBttn-next">Next</button>
-          <button class="sliderBttn sliderBttn-prev">Prev</button>
-          <input class="slider-scrollbar" type="range" />
+          <button class="sliderBttn sliderBttn-next">&#8594</button>
+          <button class="sliderBttn sliderBttn-prev">&#8592</button>
+          <!-- <input class="slider-scrollbar" type="range" /> -->
         </div>
         <div class="cart-box">
           <a class="nav-link openCartLink" href="#modal-cart" data-bs-toggle="modal">
-            <i class="fas fa-shopping-bag"></i>
-            <span id="cart-badge" class="badge bg-dark"></span>
+            <i class="cart-icon fas fa-shopping-bag"></i>
+            <span id="cart-badge" class="badge"></span>
           </a>
         </div>
       </div>
@@ -430,28 +430,6 @@
       </div>
     </div>
 
-    <div class="wine-shop" id="shop">
-      <div class="container">
-        <section class="main-text-block">
-          <p class="main-text-block__above">Craft wines</p>
-          <h2 class="main-text-block__title">Our Wines</h2>
-          <img class="main-text-block__img" src="img/grape.svg" alt="Grape" />
-          <p class="main-text-block__subtitle">
-            Select your favorite wine and buy it in a couple of clicks.
-          </p>
-        </section>
-        <div class="wine-shop__bttns">
-          <button class="bttns__bttn">All wines</button>
-          <button class="bttns__bttn redWinesBttn">Red wines</button>
-          <button class="bttns__bttn">White wines</button>
-        </div>
-        <div class="slider">
-          <div class="product-list">
-            <button>Next</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="video">
       <div class="container">
@@ -490,7 +468,7 @@
                 <p class="second-text-block__subtitle">
                   Great selection of red wines for you.
                 </p>
-                <a class="top-wines__bttn bttns__bttn" href="#">Shop red wines</a>
+                <a class="top-wines__bttn bttns__bttn" href="#best-deals">Shop red wines</a>
               </div>
             </div>
 
@@ -500,7 +478,7 @@
                 <p class="second-text-block__subtitle">
                   Top white wines for any occasion.
                 </p>
-                <a class="top-wines__bttn bttns__bttn" href="#">Shop white wines</a>
+                <a class="top-wines__bttn bttns__bttn" href="#best-deals">Shop white wines</a>
               </div>
             </div>
           </div>
@@ -516,9 +494,9 @@
             Join our club of wine-lovers and be the first to know about the
             special offers.
           </p>
-          <button class="card__bttn bttns__bttn bttns__bttn_else">
+          <a class="discount__bttn" href="#join">
             Join
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -588,7 +566,7 @@
       </div>
     </div>
 
-    <div class="testimonials">
+    <!-- <div class="testimonials">
       <div class="container">
         <section class="main-text-block">
           <p class="main-text-block__above">Testimonials</p>
@@ -608,23 +586,22 @@
             bottles of Chardonnay. Our guests were delighted and asked for the
             name of the producer!”
           </p>
-          <!-- <p class="testimonials-slider__item">“We were to hold a responsible event with a buffet table and
-                        wanted
-                        to surprise our guests with some local products. I recalled that we have the CaliWines winery in
-                        California and ordered 10 bottles of Chardonnay. Our guests were delighted and asked for the
-                        name of
-                        the producer!”
-                    </p>
-                    <p class="testimonials-slider__item">“We were to hold a responsible event with a buffet table and
-                        wanted
-                        to surprise our guests with some local products. I recalled that we have the CaliWines winery in
-                        California and ordered 10 bottles of Chardonnay. Our guests were delighted and asked for the
-                        name of
-                        the producer!”
-                    </p> -->
+          <p class="testimonials-slider__item">“We were to hold a responsible event with a buffet table and
+            wanted
+            to surprise our guests with some local products. I recalled that we have the CaliWines winery in
+            California and ordered 10 bottles of Chardonnay. Our guests were delighted and asked for the
+            name of
+            the producer!”
+          </p>
+          <p class="testimonials-slider__item">“Our restaurant has been cooperating with this winery for over 10 years.
+            We order the whole range of wines from them. We are completely satisfied with the quality of the wine
+            supplied to us. And our guests often choose CaliWines from our wine menu.”
+          </p>
         </div>
+        <button class="testimonials-slider-bttn testimonials-slider-bttn_next">Back</button>
+        <button class="testimonials-slider-bttn testimonials-slider-bttn_back">Next</button>
       </div>
-    </div>
+    </div> -->
 
     <div class="questions" id="questions">
       <div class="container">
@@ -639,44 +616,44 @@
               <p class="accordeon__title">
                 Are you a wholesale wine supplier?
               </p>
-              <!-- <p class="accordeon__content">Our winery produces craft wine. Bulk orders are possible, but
-                                lots
-                                cannot be large.</p> -->
+              <p class="accordeon__content">Our winery produces craft wine. Bulk orders are possible, but
+                lots
+                cannot be large.</p>
             </div>
             <div class="accordeon__item">
               <p class="accordeon__title">Do you ship wine within the USA?</p>
-              <!-- <p class="accordeon__content">Yes, we ship your orders to any state and city in the United
-                                States, as well as abroad.</p> -->
+              <p class="accordeon__content">Yes, we ship your orders to any state and city in the United
+                States, as well as abroad.</p>
             </div>
             <div class="accordeon__item">
               <p class="accordeon__title">
                 How many varieties are there in your winery?
               </p>
-              <!-- <p class="accordeon__content">Our winery offers wine-lovers more than 10 different varieties
-                                of
-                                wines with different aging periods.</p> -->
+              <p class="accordeon__content">Our winery offers wine-lovers more than 10 different varieties
+                of
+                wines with different aging periods.</p>
             </div>
             <div class="accordeon__item">
               <p class="accordeon__title">
                 Do you advise on the choice of wine?
               </p>
-              <!-- <p class="accordeon__content">Yes. Our winery experts will tell you more about the varieties
-                                and
-                                help you choose the best option for you.</p> -->
+              <p class="accordeon__content">Yes. Our winery experts will tell you more about the varieties
+                and
+                help you choose the best option for you.</p>
             </div>
             <div class="accordeon__item">
               <p class="accordeon__title">
                 Where are your vineyards located?
               </p>
-              <!-- <p class="accordeon__content">We are located in the Napa Valley, America's most famous wine
-                                region.</p>
-                        </div> -->
+              <p class="accordeon__content">We are located in the Napa Valley, America's most famous wine
+                region.</p>
             </div>
           </div>
-
           <img src="img/wine-glass.png" alt="Bottle of wine with glass" class="questions__img" />
         </div>
+
       </div>
+    </div>
     </div>
 
     <div class="info">
@@ -737,7 +714,7 @@
   </main>
 
   <footer>
-    <div class="join">
+    <div class="join" id="join">
       <div class="container">
         <div class="join-content">
           <section class="main-text-block main-text-block_left">
@@ -872,12 +849,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+  <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
     integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
     crossorigin="anonymous"></script>
 
   <!-- <script src="js/products.js"></script> -->
-  <script src="js/alert-window.js"></script>
+  <!-- <script src="js/alert-window.js"></script> -->
   <script src="js/products-service.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/product-list.js"></script>

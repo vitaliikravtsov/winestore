@@ -30,18 +30,17 @@ class Cart {
       total += product.price * this.cart[id];
       cartDomSting += `<div class="row" data-id="${id}"> 
                     <div class="col-5">${product.name}</div>
-                    <div class="col-3">${product.price}</div>
+                    <div class="col-3">$${product.price}</div>
                     <div class="col-2">${this.cart[id]}</div>
                     <div class="col-1"><button data-id=${id} class="btn btn-sm plus">+</button></div>
                     <div class="col-1"><button data-id=${id} class="btn btn-sm minus">-</button></div>
                 </div>`;
-      console.log(total);
     }
-    total = total.toFixed(2);
+    total = total.toFixed(0);
     cartDomSting += `
                 <div class="row">
                     <div class="col-5"><strong>TOTAL</strong></div>
-                    <div class="col-3"><strong>$${total}</strong></div>
+                    <div class="col-3"><strong>$${total} USD</strong></div>
                 </div>            
         </div>`;
     this.cartContainer.querySelector(
@@ -84,9 +83,13 @@ class Cart {
   }
   async updateBadge() {
     const { count, cost } = await this.cartLengthAndCost();
-    document.querySelector("#cart-badge").innerText = `${count} $${cost.toFixed(
-      2
-    )}`;
+    document.querySelector("#cart-badge").innerText = `${count}`;
+
+    if (count < 1) {
+      document.querySelector('.cart-box').style.display = 'none'
+    } else {
+      document.querySelector('.cart-box').style.display = 'block'
+    }
   }
   async cartLengthAndCost() {
     // return Object.keys(this.cart).length;
@@ -105,10 +108,10 @@ class Cart {
     };
   }
   async order(ev) {
-    if ((await this.cartLengthAndCost()).count === 0) {
-      window.showAlert("Please choose products to order", false);
-      return;
-    }
+    // if ((await this.cartLengthAndCost()).count === 0) {
+    //   window.showAlert("Please choose products to order", false);
+    //   return;
+    // }
     const form = this.cartContainer.querySelector(".form-contacts");
     if (form.checkValidity()) {
       ev.preventDefault();
@@ -136,12 +139,12 @@ class Cart {
           this.saveCart();
           this.updateBadge();
           this.renderCart();
-          window.showAlert("Thank you! " + responseText);
+          // window.showAlert("Thank you! " + responseText);
           this.cartContainer.querySelector(".close-btn").click();
         })
-        .catch((error) => showAlert("There is an error: " + error, false));
+        // .catch((error) => showAlert("There is an error: " + error, false));
     } else {
-      window.showAlert("Please fill form correctly", false);
+      // window.showAlert("Please fill form correctly", false);
     }
   }
 }
